@@ -74,7 +74,7 @@ import (
 
 var (
 	addr             = flag.String("addr", ":http", "serve http on `address`")
-	serveTLS         = flag.Bool("tls", false, "serve https on :443")
+	serveTLS         = flag.Bool("tls", false, "serve https on :8443")
 	vcs              = flag.String("vcs", "git", "set version control `system`")
 	letsEncryptEmail = flag.String("letsencrypt", "", "use lets encrypt to issue TLS certificate, agreeing to TOS as `email` (implies -tls)")
 	importPath       string
@@ -86,8 +86,8 @@ func usage() {
 	fmt.Fprintf(os.Stderr, "usage: go-import-redirector <import> <repo>\n")
 	fmt.Fprintf(os.Stderr, "options:\n")
 	flag.PrintDefaults()
-	fmt.Fprintf(os.Stderr, "examples:\n")
 	fmt.Fprintf(os.Stderr, "\tgo-import-redirector rsc.io/* https://github.com/rsc/*\n")
+	fmt.Fprintf(os.Stderr, "examples:\n")
 	fmt.Fprintf(os.Stderr, "\tgo-import-redirector 9fans.net/go https://github.com/9fans/go\n")
 	os.Exit(2)
 }
