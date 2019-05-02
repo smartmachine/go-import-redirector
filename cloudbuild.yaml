@@ -1,0 +1,9 @@
+steps:
+- name: 'eu.gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'eu.gcr.io/$PROJECT_ID/go-import-redirector]', '.']
+- name: 'eu.gcr.io/cloud-builders/docker'
+  args: ['push', 'eu.gcr.io/$PROJECT_ID/go-import-redirector']
+- name: 'eu.gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'go-import-redirector', '--image', 'eu.gcr.io/$PROJECT_ID/go-import-redirector', '--region', 'us-central1', '--allow-unauthenticated']
+images:
+- eu.gcr.io/$PROJECT_ID/go-import-redirector
