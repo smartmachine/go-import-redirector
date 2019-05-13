@@ -1,2 +1,2 @@
-go get [-u] rsc.io/go-import-redirector
-https://godoc.org/rsc.io/go-import-redirector
+go get [-u] go.smartmachine.io/go-import-redirector
+https://godoc.org/go.smartmachine.io/go-import-redirector
